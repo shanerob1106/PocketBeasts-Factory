@@ -12,20 +12,20 @@ import java.util.ArrayList;
  */
 class HighLevelCards extends Card {
 
-    public static final Card[] STARTER_CARDS = new Card[]{
+    public static final Card[] HIGHLEVEL_CARDS = new Card[]{
         new Card("HL", "HighLevelCard1", 30, 30, 30),
         new Card("HL", "HighLevelCard2", 31, 31, 31)
     };
 
-//    public HighLevelCards(String id, String name, int manaCost, int attack, int health) {
-//        super(id, name, manaCost, attack, health);
-//    }
-
+    public HighLevelCards(String id, String name, int manaCost, int attack, int health) {
+        super(id, name, manaCost, attack, health);
+    }
+    
     public static ArrayList<Card> getHighLevelDeck() {
         ArrayList<Card> starterDeck = new ArrayList<>();
 
         for (int i = 0; i < 2; i++) {
-            for (Card card : STARTER_CARDS) {
+            for (Card card : HIGHLEVEL_CARDS) {
                 starterDeck.add(new Card(card));
             }
         }

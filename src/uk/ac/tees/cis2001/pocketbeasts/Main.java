@@ -69,8 +69,6 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        StarterCardFactory starterCardFactory = new StarterCardFactory();
-        
         System.out.println("");
         System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+");
         System.out.println("Welcome to PocketBeasts!");
@@ -104,10 +102,12 @@ public class Main {
         System.out.println("Press ENTER to continue...");
         Scanner sc = new Scanner(System.in);
         sc.nextLine();
+        
+        StarterCardFactory starterCardFactory = new StarterCardFactory();
 
         Player[] players = new Player[]{
-            new Player("James", new Deck(starterCardFactory.getCards())),
-            new Player("Steve", new Deck(starterCardFactory.getCards()))
+            new Player("James", new Deck(starterCardFactory.getCards()), 1),
+            new Player("Steve", new Deck(starterCardFactory.getCards()), 1)
         };
 
         for (Player player : players) {

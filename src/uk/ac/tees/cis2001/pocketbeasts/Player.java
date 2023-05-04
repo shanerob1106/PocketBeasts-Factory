@@ -37,7 +37,7 @@ public class Player {
     private final InPlay inPlay;
     private final Graveyard graveyard;
 
-    public Player(String name, Deck deck) {
+    public Player(String name, Deck deck, int level) {
         this.name = name;
         this.manaAvailable = 0;
         this.manaTicker = 0;
