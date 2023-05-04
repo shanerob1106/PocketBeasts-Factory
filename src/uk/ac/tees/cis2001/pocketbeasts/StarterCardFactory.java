@@ -4,29 +4,36 @@
  */
 package uk.ac.tees.cis2001.pocketbeasts;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author shane
  */
 public class StarterCardFactory {
     
-    private Card card = null;
-    private Player player;
+    Player player;
+    private ArrayList<Card> cards;
     
-    public Card getCard(){
-        player = null;
+    public StarterCardFactory() {
+        this.cards = new ArrayList<>();
+    }
+
+    public ArrayList<Card> getCards() {
         
         // Creates a set of cards based on the players 'level'
-        // Default Level is 1 (Overriding james to Level +10 or +20) 
-        if(player.getLevel() <= 1){
-            card = new LowLevelCards();
-            
+        // Default Level is 1 (Overriding james to Level +10 || +20) 
+        if (player.getLevel() >= 1) {
+            cards = LowLevelCards.getLowLevelDeck();
+
         } else if (player.getLevel() >= 10) {
-            card = new MediumLevelCards();
-            
+            cards = MediumLevelCards.getMediumLevelDeck();
+
+        } else if (player.getLevel() >= 20) {
+            cards = HighLevelCards.getHighLevelDeck();
         } else {
-            card = new HighLevelCards();
+            System.out.println("Error getting player levels");
         }
-        return card;
+        return null;
     }
 }
