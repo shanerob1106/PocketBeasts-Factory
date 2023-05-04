@@ -109,6 +109,13 @@ public class Main {
             new Player("James", new Deck(starterCardFactory.getCards()), 1),
             new Player("Steve", new Deck(starterCardFactory.getCards()), 1)
         };
+        
+//      StarterCardFactory starterCardFactory = new StarterCardFactory();
+
+//      Player[] players = new Player[]{
+//          new Player("James", new Deck(starterCardFactory.getCards(player1)), 1),
+//          new Player("Steve", new Deck(starterCardFactory.getCards(player2)), 1)
+//      };
 
         for (Player player : players) {
             player.newGame();
