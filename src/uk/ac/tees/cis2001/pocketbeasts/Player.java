@@ -30,6 +30,7 @@ public class Player {
     private int manaAvailable;
     private int manaTicker;
     private int health;
+    private int level;
     
     private final Deck deck;
     private final Hand hand;
@@ -41,6 +42,7 @@ public class Player {
         this.manaAvailable = 0;
         this.manaTicker = 0;
         this.health = 15;
+        this.level = 1;
         this.deck = deck;
         this.hand = new Hand();
         this.inPlay = new InPlay();
@@ -57,6 +59,10 @@ public class Player {
 
     public int getHealth() {
         return this.health;
+    }
+    
+    public int getLevel() {
+        return this.level;
     }
     
     public Deck getDeck() {

@@ -8,6 +8,8 @@ package uk.ac.tees.cis2001.pocketbeasts;
  *
  * @author shane
  */
-public class DarkCards {
-    
+class LowLevelCards extends Card{
+    public LowLevelCards() {
+        super("LL", "LowLevel", 10, 10, 10);
+    }
 }

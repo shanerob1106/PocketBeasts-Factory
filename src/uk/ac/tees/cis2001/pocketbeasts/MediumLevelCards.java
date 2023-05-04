@@ -8,6 +8,8 @@ package uk.ac.tees.cis2001.pocketbeasts;
  *
  * @author shane
  */
-public class LightCards {
-    
+class MediumLevelCards extends Card {
+    public MediumLevelCards() {
+        super("ML", "MediumLevel", 20, 20, 20);
+    }
 }
