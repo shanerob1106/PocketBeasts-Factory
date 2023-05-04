@@ -24,14 +24,16 @@ import java.util.Collections;
  * @author James Fairbairn
  * @author Steven Mead
  */
-public class Deck {
+public class Deck extends AbstractDeck {
     
-    private final ArrayList<Card> cards;
+    // private final ArrayList<Card> cards;
     
     public Deck(ArrayList<Card> cards) {
-        this.cards = cards;
+        super(cards);
+        // this.cards = cards;
     }
     
+    @Override
     public int count() {
         return this.cards.size();
     }
