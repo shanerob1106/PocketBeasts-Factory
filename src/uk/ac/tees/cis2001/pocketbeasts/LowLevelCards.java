@@ -24,16 +24,12 @@ public class LowLevelCards extends Card {
     public static ArrayList<Card> getLowLevelDeck() {
         ArrayList<Card> starterDeck = new ArrayList<>();
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 1; i++) {
             for (Card card : LOWLEVEL_CARDS) {
                 starterDeck.add(new Card(card));
             }
         }
 
         return starterDeck;
-    }
-
-    public LowLevelCards(Card card) {
-        super(card);
-    }
+    }    
 }
