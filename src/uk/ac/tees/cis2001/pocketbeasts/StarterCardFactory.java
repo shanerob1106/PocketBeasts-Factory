@@ -39,3 +39,25 @@ public class StarterCardFactory {
         return cards = LowLevelCards.getLowLevelDeck();
     }
 }
+
+// public class StarterCardFactory {
+//     private ArrayList<Card> cards;
+
+//     public StarterCardFactory() {
+//         this.cards = new ArrayList<>();
+//     }
+
+//     public ArrayList<Card> getCards(Player player) {
+//         // Creates a set of cards based on the player's level
+//         if (player.getLevel() >= 1) {
+//             return cards = LowLevelCards.getLowLevelDeck();
+//         } else if (player.getLevel() >= 10) {
+//             return cards = MediumLevelCards.getMediumLevelDeck();
+//         } else if (player.getLevel() >= 20) {
+//             return cards = HighLevelCards.getHighLevelDeck();
+//         } else {
+//             System.out.println("Error getting player levels");
+//         }
+//         return cards = LowLevelCards.getLowLevelDeck();
+//     }
+// }
