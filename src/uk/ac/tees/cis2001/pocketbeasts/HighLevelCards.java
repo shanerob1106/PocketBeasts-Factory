@@ -12,15 +12,21 @@ import java.util.ArrayList;
  */
 class HighLevelCards extends Card {
 
+    public HighLevelCards(Card card) {
+        super(card);
+    }
+
     public static final Card[] HIGHLEVEL_CARDS = new Card[]{
-        new Card("HL", "HighLevelCard1", 30, 30, 30),
-        new Card("HL", "HighLevelCard2", 31, 31, 31)
+        new Card("GA", "Goblin Archer", 7, 2, 3),
+        new Card("AS", "Acidic Slime", 6, 3, 6),
+        new Card("PR", "Pack Rat", 4, 3, 1),
+        new Card("DW", "Dire Wolf", 8, 6, 3),
+        new Card("SW", "Skeleton Warrior", 7, 4, 5),
+        new Card("ZH", "Zombie Horde", 10, 1, 8),
+        new Card("TS", "Trapdoor Spider", 5, 2, 4),
+        new Card("PB", "Polar Bear", 11, 6, 6)
     };
 
-    public HighLevelCards(String id, String name, int manaCost, int attack, int health) {
-        super(id, name, manaCost, attack, health);
-    }
-    
     public static ArrayList<Card> getHighLevelDeck() {
         ArrayList<Card> starterDeck = new ArrayList<>();
 
@@ -29,11 +35,6 @@ class HighLevelCards extends Card {
                 starterDeck.add(new Card(card));
             }
         }
-
         return starterDeck;
-    }
-
-    public HighLevelCards(Card card) {
-        super(card);
     }
 }

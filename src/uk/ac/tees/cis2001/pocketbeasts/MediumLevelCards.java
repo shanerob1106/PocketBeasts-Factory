@@ -12,14 +12,20 @@ import java.util.ArrayList;
  */
 class MediumLevelCards extends Card {
 
-    public static final Card[] MEDIUMLEVEL_CARDS = new Card[]{
-        new Card("ML", "MediumLevelCard1", 20, 20, 20),
-        new Card("ML", "MediumLevelCard2", 21, 21, 21)
-    };
-
-    public MediumLevelCards(String id, String name, int manaCost, int attack, int health) {
-        super(id, name, manaCost, attack, health);
+    public MediumLevelCards(Card card) {
+        super(card);
     }
+
+    public static final Card[] MEDIUMLEVEL_CARDS = new Card[]{
+        new Card("GW", "Goblin Warrior", 6, 3, 2),
+        new Card("TS", "Toxic Slime", 5, 2, 5),
+        new Card("GR", "Giant Rat", 3, 2, 1),
+        new Card("WW", "Werewolf", 7, 5, 3),
+        new Card("SK", "Skeleton Knight", 6, 3, 5),
+        new Card("ZB", "Zombie Brute", 8, 2, 7),
+        new Card("VS", "Venomous Spider", 4, 2, 3),
+        new Card("BB", "Grizzly Bear", 9, 5, 5)
+    };
 
     public static ArrayList<Card> getMediumLevelDeck() {
         ArrayList<Card> starterDeck = new ArrayList<>();
@@ -29,11 +35,6 @@ class MediumLevelCards extends Card {
                 starterDeck.add(new Card(card));
             }
         }
-
         return starterDeck;
-    }
-
-    public MediumLevelCards(Card card) {
-        super(card);
     }
 }

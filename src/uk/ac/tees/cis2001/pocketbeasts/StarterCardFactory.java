@@ -12,31 +12,23 @@ import java.util.ArrayList;
  */
 public class StarterCardFactory {
     
-    private ArrayList<Card> cards;
-    private Player player;
-            
-    public StarterCardFactory(Player player) {
-        this.cards = new ArrayList<>();
-        this.player = player;
-    }
-
-    public ArrayList<Card> getCards() {
+    public ArrayList<Card> getCards(int level) {
         // Creates a set of cards based on the players 'level'
         // Default Level is 1 (Overriding james to Level +10 || +20) 
-        if (player.getLevel() >= 1) {
-            return cards = LowLevelCards.getLowLevelDeck();
+        if (level >= 1) {
+            return LowLevelCards.getLowLevelDeck();
             
-        } else if (player.getLevel() >= 10) {
-            return cards = MediumLevelCards.getMediumLevelDeck();
+        } else if (level >= 10) {
+            return MediumLevelCards.getMediumLevelDeck();
             
-        } else if (player.getLevel() >= 20) {
-            return cards = HighLevelCards.getHighLevelDeck();
+        } else if (level >= 20) {
+            return HighLevelCards.getHighLevelDeck();
             
         } else {
             System.out.println("Error getting player levels");
-            // return cards = LowLevelCards.getLowLevelDeck();
+             return LowLevelCards.getLowLevelDeck();
         }
-        return cards = LowLevelCards.getLowLevelDeck();
+        //return LowLevelCards.getLowLevelDeck();
     }
 }
 

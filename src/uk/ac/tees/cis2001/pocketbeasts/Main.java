@@ -27,30 +27,6 @@ import java.util.Scanner;
  */
 public class Main {
 
-//    public static final Card[] STARTER_CARDS = new Card[] {
-//            new Card ("BR", "Barn Rat", 1, 1, 1),
-//            new Card ("SP", "Scampering Pup", 2, 2, 1),
-//            
-//            new Card ("HB", "Hardshell Beetle", 2, 1, 2),
-//            new Card ("VHC", "Vicious House Cat", 3, 3, 2),
-//            new Card ("GD", "Guard Dog", 3, 2, 3),
-//            
-//            new Card ("ARH", "All Round Hound", 3, 3, 3),
-//            new Card ("MO", "Moor Owl", 4, 4, 2),
-//            new Card ("HT", "Highland Tiger", 5, 4, 4)
-//        };
-//    
-//    public static ArrayList<Card> getStarterDeck() {
-//        ArrayList<Card> starterDeck = new ArrayList<>();
-//        
-//        for (int i=0; i<2; i++) {
-//            for (Card card : STARTER_CARDS) {
-//                starterDeck.add(new Card(card));
-//            }
-//        }
-//        
-//        return starterDeck;
-//    }
     public static String getPrompt(String prompt, String[] validResponse) {
         System.out.print(prompt);
 
@@ -102,20 +78,23 @@ public class Main {
         System.out.println("Press ENTER to continue...");
         Scanner sc = new Scanner(System.in);
         sc.nextLine();
-        
-        StarterCardFactory starterCardFactory = new StarterCardFactory();
+
+        ArrayList<Card> empty = new ArrayList<>();
 
         Player[] players = new Player[]{
-            new Player("James", new Deck(starterCardFactory.getCards()), 1),
-            new Player("Steve", new Deck(starterCardFactory.getCards()), 1)
+            new Player("James", new Deck(empty), 10),
+            new Player("Steve", new Deck(empty), 5)
         };
-        
-//      StarterCardFactory starterCardFactory = new StarterCardFactory();
 
-//      Player[] players = new Player[]{
-//          new Player("James", new Deck(starterCardFactory.getCards(player1)), 1),
-//          new Player("Steve", new Deck(starterCardFactory.getCards(player2)), 1)
-//      };
+        for (Player player : players) {
+            StarterCardFactory factory = new StarterCardFactory();
+            ArrayList<Card> cards = factory.getCards(player.getLevel());
+            for (Card card : cards) {
+                player.getDeck().add(card);
+            }
+            System.out.println(player.getName() + "'s starter deck:");
+            System.out.println(player.getDeck().getCards());
+        }
 
         for (Player player : players) {
             player.newGame();
